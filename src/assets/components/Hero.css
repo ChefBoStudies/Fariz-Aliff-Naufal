@@ -1,0 +1,37 @@
+.hero-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  position: relative;
+  transform-origin: center center;
+  margin: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title svg {
+  width: clamp(200px, 20vw, 400px);
+  height: auto;
+  transform-origin: 15% center;
+}
+
+@media (max-width: 768px) {
+  .hero-title svg {
+    width: clamp(180px, 25vw, 350px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title svg {
+    width: clamp(150px, 30vw, 300px);
+  }
+} 
