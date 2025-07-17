@@ -1,38 +1,52 @@
+import { useNavigate } from 'react-router-dom';
 import CardSwap, { Card } from './CardSwap';
 import './Projects.css';
 
 const Projects = () => {
+  const navigate = useNavigate();
+  
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      image: "https://via.placeholder.com/500x400/667eea/ffffff?text=E-Commerce",
-      link: "#"
+      title: "ARpeggio",
+      subtitle: "AR Piano Learning",
+      icon: "🎹",
+      gradient: "linear-gradient(135deg, #758073 0%, #5a6d58 100%)",
+      technologies: ["Swift", "ARKit", "Firebase"],
+      link: "/projects/arpeggio"
     },
     {
       id: 2,
-      title: "Task Management App",
-      image: "https://via.placeholder.com/500x400/f093fb/ffffff?text=Task+Manager",
-      link: "#"
+      title: "TaskFlow",
+      subtitle: "Management System",
+      icon: "📋",
+      gradient: "linear-gradient(135deg, #8b9586 0%, #758073 100%)",
+      technologies: ["React", "TypeScript", "Firebase"],
+      link: "/projects/task-manager"
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      image: "https://via.placeholder.com/500x400/4ade80/ffffff?text=Weather+App",
-      link: "#"
+      title: "WeatherLive",
+      subtitle: "Dashboard Analytics",
+      icon: "🌤️",
+      gradient: "linear-gradient(135deg, #a0a896 0%, #8b9586 100%)",
+      technologies: ["React", "Chart.js", "API"],
+      link: "/projects/weather-dashboard"
     },
     {
       id: 4,
-      title: "Social Media Dashboard",
-      image: "https://via.placeholder.com/500x400/fb7185/ffffff?text=Social+Dashboard",
-      link: "#"
+      title: "SocialPulse",
+      subtitle: "Media Dashboard",
+      icon: "📊",
+      gradient: "linear-gradient(135deg, #6d7a6b 0%, #5a6d58 100%)",
+      technologies: ["React", "D3.js", "Node.js"],
+      link: "/projects/social-dashboard"
     }
   ];
 
   const handleCardClick = (index) => {
-    console.log(`Clicked on project ${index + 1}`);
-    // Later we'll navigate to project detail page
-    window.open(projects[index].link, '_blank');
+    console.log(`Navigating to project: ${projects[index].title}`);
+    navigate(projects[index].link);
   };
 
   return (
@@ -59,12 +73,32 @@ const Projects = () => {
               >
                 {projects.map((project, index) => (
                   <Card key={project.id}>
-                    <div className="card-content">
-                      <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="card-image"
-                      />
+                    <div className="card-content" style={{ background: project.gradient }}>
+                      <div className="card-inner">
+                        <div className="card-header">
+                          <div className="card-icon">{project.icon}</div>
+                          <div className="card-number">0{project.id}</div>
+                        </div>
+                        
+                        <div className="card-body">
+                          <h3 className="card-title">{project.title}</h3>
+                          <p className="card-subtitle">{project.subtitle}</p>
+                        </div>
+                        
+                        <div className="card-footer">
+                          <div className="card-tech">
+                            {project.technologies.map((tech, techIndex) => (
+                              <span key={techIndex} className="tech-badge">
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        
+                        <div className="card-overlay">
+                          <span className="click-hint">Click to explore</span>
+                        </div>
+                      </div>
                     </div>
                   </Card>
                 ))}
