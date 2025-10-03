@@ -217,6 +217,7 @@
 @media (max-width: 768px) {
   .projects {
     padding: 4rem 1.5rem;
+    margin-top: -120px; /* reduce negative margin on mobile to avoid overlap */
   }
 
   .projects-content {
