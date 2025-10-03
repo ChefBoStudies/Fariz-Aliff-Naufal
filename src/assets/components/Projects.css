@@ -76,6 +76,14 @@
   transition: all 0.3s ease;
   position: relative;
 }
+.card-content.disabled {
+  cursor: not-allowed;
+}
+
+.card-content.disabled .card-overlay {
+  background: rgba(0, 0, 0, 0.55);
+}
+
 
 .card-content:hover {
   transform: scale(1.02);

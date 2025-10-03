@@ -24,7 +24,25 @@ const TaskManagerPage = () => {
     ],
     challenges: "Handled cross-device image orientation inconsistencies with server-first normalization (sharp auto-rotate + re-encode). Avoided broken tiles by filtering missing objects and removing failed tiles in the UI. Documented remaining rare edge-cases for a future iteration.",
     github: null,
-    demo: "https://lensa-kita.vercel.app/e/lensa-kami"
+    demo: "https://lensa-kita.vercel.app/e/lensa-kami",
+    techDescriptions: [
+      { name: 'Vanilla JavaScript', details: 'ES modules SPA with router, state, and accessible, mobile-first components.' },
+      { name: 'Vercel Functions', details: 'Serverless APIs for event fetch, upload reservation, upload proxy, and recording photo metadata.' },
+      { name: 'Supabase', details: 'Postgres with RLS; Storage for images; RPC for atomic device upload-limit enforcement.' },
+      { name: 'sharp', details: 'Server-side image normalization: auto-rotate, resize (~2000px), compress, strip EXIF for speed and consistency.' }
+    ],
+    developmentProcess: [
+      { title: 'Discovery & Scope', description: 'Defined guest UX: QR → event → upload up to 5 photos/device → live gallery → later export.' },
+      { title: 'Schema & Policies', description: 'Designed events, photos, upload_reservations; enabled RLS; wrote reserve_upload_slot RPC.' },
+      { title: 'API-first', description: 'Endpoints for event fetch, photo listing, upload reservation, upload proxy, image proxy.' },
+      { title: 'Frontend SPA', description: 'Mobile-first uploader, optimistic UI, 2-column gallery with lightbox and dedicated close action.' },
+      { title: 'Hardening', description: 'Strict CSP/Permissions-Policy, SPA rewrites, filtered missing objects, no-store caching headers.' }
+    ],
+    resultsImpact: [
+      'Deployed for a real wedding; smooth QR → upload flow with strong guest participation and zero downtime.',
+      'Hundreds of photos uploaded in hours; polling kept galleries fresh without socket complexity.',
+      'Delightful, accessible mobile-first UX made it easy for all guests to participate.'
+    ]
   }
 
   return <ProjectDetail {...projectData} />

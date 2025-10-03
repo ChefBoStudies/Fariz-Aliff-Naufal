@@ -6,13 +6,16 @@ import './ProjectDetail.css'
 const ProjectDetail = ({ 
   projectTitle, 
   projectImage, 
-  technologies, 
+  technologies = [], 
   description, 
-  features, 
+  features = [], 
   challenges,
   github,
   demo,
-  videoUrl 
+  videoUrl,
+  techDescriptions = [],
+  developmentProcess = [],
+  resultsImpact = []
 }) => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
   const socialLinks = [
@@ -111,40 +114,44 @@ const ProjectDetail = ({
             <p className="challenges-text">{challenges}</p>
           </section>
 
-          <section className="project-section">
-            <h2>Technologies Used</h2>
-            <div className="detailed-tech">
-              {technologies.map((tech, index) => (
-                <div key={index} className="tech-detail">
-                  <h4>{tech}</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          {techDescriptions.length > 0 && (
+            <section className="project-section">
+              <h2>Tech Used</h2>
+              <div className="detailed-tech">
+                {techDescriptions.map((item, index) => (
+                  <div key={index} className="tech-detail">
+                    <h4>{item.name}</h4>
+                    <p>{item.details}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
-          <section className="project-section">
-            <h2>Development Process</h2>
-            <div className="process-steps">
-              <div className="process-step">
-                <h4>1. Planning & Design</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          {developmentProcess.length > 0 && (
+            <section className="project-section">
+              <h2>Development Process</h2>
+              <div className="process-steps">
+                {developmentProcess.map((step, index) => (
+                  <div key={index} className="process-step">
+                    <h4>{step.title}</h4>
+                    <p>{step.description}</p>
+                  </div>
+                ))}
               </div>
-              <div className="process-step">
-                <h4>2. Development</h4>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-              <div className="process-step">
-                <h4>3. Testing & Deployment</h4>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-              </div>
-            </div>
-          </section>
+            </section>
+          )}
 
-          <section className="project-section">
-            <h2>Results & Impact</h2>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-          </section>
+          {resultsImpact.length > 0 && (
+            <section className="project-section">
+              <h2>Results & Impact</h2>
+              <ul className="features-list">
+                {resultsImpact.map((line, index) => (
+                  <li key={index}>{line}</li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
       </div>
       

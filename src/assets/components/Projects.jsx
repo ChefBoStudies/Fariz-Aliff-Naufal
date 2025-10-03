@@ -46,8 +46,12 @@ const Projects = () => {
   ];
 
   const handleCardClick = (index) => {
-    console.log(`Navigating to project: ${projects[index].title}`);
-    navigate(projects[index].link);
+    const target = projects[index];
+    if (!target.link || target.link === "_blank") {
+      return;
+    }
+    console.log(`Navigating to project: ${target.title}`);
+    navigate(target.link);
   };
 
   // Responsive sizing for CardSwap
@@ -88,7 +92,8 @@ const Projects = () => {
               >
                 {projects.map((project, index) => (
                   <Card key={project.id}>
-                    <div className="card-content" style={{ background: project.gradient }}>
+                    <div className={`card-content${project.link === "_blank" ? ' disabled' : ''}`} style={{ background: project.gradient }} aria-disabled={project.link === "_blank"}
+                      role={project.link === "_blank" ? 'button' : undefined}>
                       <div className="card-inner">
                         <div className="card-header">
                           <div className="card-icon">{project.icon}</div>
@@ -111,7 +116,7 @@ const Projects = () => {
                         </div>
                         
                         <div className="card-overlay">
-                          <span className="click-hint">Click to explore</span>
+                          <span className="click-hint">{project.link === "_blank" ? 'Work in progress' : 'Click to explore'}</span>
                         </div>
                       </div>
                     </div>
