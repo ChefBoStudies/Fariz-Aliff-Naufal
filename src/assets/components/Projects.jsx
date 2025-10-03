@@ -18,30 +18,30 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "TaskFlow",
-      subtitle: "Management System",
-      icon: "📋",
+      title: "Lensa Kita",
+      subtitle: "Wedding Photo Web App",
+      icon: "📷",
       gradient: "linear-gradient(135deg, #8b9586 0%, #758073 100%)",
-      technologies: ["React", "TypeScript", "Firebase"],
+      technologies: ["Vanilla JS", "Supabase", "Vercel"],
       link: "/projects/task-manager"
     },
     {
       id: 3,
-      title: "WeatherLive",
-      subtitle: "Dashboard Analytics",
+      title: "Trading Bot",
+      subtitle: "Work in Progress",
       icon: "🌤️",
       gradient: "linear-gradient(135deg, #a0a896 0%, #8b9586 100%)",
       technologies: ["React", "Chart.js", "API"],
-      link: "/projects/weather-dashboard"
+      link: "_blank"
     },
     {
       id: 4,
-      title: "SocialPulse",
-      subtitle: "Media Dashboard",
+      title: "Freelance Work",
+      subtitle: "Work in Progress",
       icon: "📊",
       gradient: "linear-gradient(135deg, #6d7a6b 0%, #5a6d58 100%)",
       technologies: ["React", "D3.js", "Node.js"],
-      link: "/projects/social-dashboard"
+      link: "_blank"
     }
   ];
 
