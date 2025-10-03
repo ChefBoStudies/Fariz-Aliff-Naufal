@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CardSwap, { Card } from './CardSwap';
 import './Projects.css';
@@ -49,6 +50,20 @@ const Projects = () => {
     navigate(projects[index].link);
   };
 
+  // Responsive sizing for CardSwap
+  const [viewportWidth, setViewportWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
+
+  useEffect(() => {
+    const onResize = () => setViewportWidth(window.innerWidth);
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  const cardWidth = viewportWidth <= 480 ? 300 : viewportWidth <= 768 ? 380 : 500;
+  const cardHeight = viewportWidth <= 480 ? 240 : viewportWidth <= 768 ? 300 : 400;
+  const cardDistance = viewportWidth <= 480 ? 50 : viewportWidth <= 768 ? 65 : 80;
+  const verticalDistance = viewportWidth <= 480 ? 60 : viewportWidth <= 768 ? 75 : 90;
+
   return (
     <section className="projects">
       <div className="projects-container">
@@ -61,12 +76,12 @@ const Projects = () => {
           </div>
 
           <div className="projects-right">
-            <div style={{ top: '250px', left: '200px', position: 'relative' }}>
+            <div className="cards-wrapper">
               <CardSwap
-                width={500}
-                height={400}
-                cardDistance={80}
-                verticalDistance={90}
+                width={cardWidth}
+                height={cardHeight}
+                cardDistance={cardDistance}
+                verticalDistance={verticalDistance}
                 delay={3000}
                 pauseOnHover={true}
                 onCardClick={handleCardClick}
