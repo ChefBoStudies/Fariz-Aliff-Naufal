@@ -8,7 +8,7 @@ import FarizCardImage from '../images/FarizCardPortfolio.jpg';
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
-  const aboutText = "Fresh Software Engineering graduate with hands-on experience delivering full-stack and AR-powered applications. Skilled in iOS development (Swift, ARKit, RealityKit) and modern web frameworks (React.js, Node.js, WordPress, Drupal, Webflow), with proven ability to build production-ready solutions. Completed impactful projects including ARpeggio, an AR-based piano learning platform, and Lensa Kami, a mobile-first wedding photo web app launched live to 100+ users. Internship at Bike Bear involved building and maintaining websites for clients such as CIMB Principal, Sunway College, and Vitagen, showcasing ability to translate client requirements into engaging, functional solutions.";
+  const aboutText = "Fresh Software Engineering graduate with experience in full-stack, AI, and AR application development. Skilled in Swift, React.js, Node.js, and cloud platforms (AWS, Supabase, Firebase). Built Veritas AI, a serverless analytics platform integrating Google Gemini for automated insights. Developed ARpeggio, an AR piano learning app, and Lensa Kita, a mobile-first photo web app launched live to 100+ guests. Internship at Bike Bear delivering production websites for clients like Sunway College and Vitagen SG, demonstrating strong problem-solving and end-to-end delivery skills";
   
   const imageRef = useRef();
   const sectionRef = useRef();

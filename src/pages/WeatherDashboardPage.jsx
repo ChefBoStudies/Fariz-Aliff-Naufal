@@ -3,8 +3,8 @@ import ProjectDetail from '../components/ProjectDetail'
 const WeatherDashboardPage = () => {
   const projectData = {
     projectTitle: "Veritas AI",
-    projectImage: "https://via.placeholder.com/500x400/4ade80/ffffff?text=Weather+App",
-    technologies: ["React", "Chart.js", "OpenWeather API", "CSS3", "Geolocation"],
+    projectImage: "https://patndglssilslamhahhn.supabase.co/storage/v1/object/public/project-assets/VeritasAI.png",
+    technologies: ["AWS", "Google Gemini", "Supabase"],
     description: "Veritas AI is a mobile‑first, single‑page web app that ingests CSV sales data, computes real‑time KPIs, and generates natural‑language insights via Google Gemini. Users upload a CSV which is stored in Supabase; an AWS Lambda automatically fetches the latest file, parses it, aggregates metrics (products, regions, satisfaction), persists summaries, and returns results to the frontend. The UI (Airbnb‑inspired) presents KPIs, a lightweight Canvas visualization, and a clean AI Insights paragraph, all deployed on Vercel.",
     features: [
       "CSV Uploads to Supabase: Secure upload to uploads bucket with metadata in uploads table.",
