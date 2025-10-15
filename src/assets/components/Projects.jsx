@@ -27,18 +27,18 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Trading Bot",
-      subtitle: "Work in Progress",
-      icon: "🌤️",
+      title: "Veritas AI",
+      subtitle: "AI Analytics Dashboard",
+      icon: "📊",
       gradient: "linear-gradient(135deg, #a0a896 0%, #8b9586 100%)",
-      technologies: ["React", "Chart.js", "API"],
-      link: "_blank"
+      technologies: ["Supabase", "AWS", "Google Gemini"],
+      link: "/projects/weather-dashboard"
     },
     {
       id: 4,
       title: "Freelance Work",
       subtitle: "Work in Progress",
-      icon: "📊",
+      icon: "🌤️",
       gradient: "linear-gradient(135deg, #6d7a6b 0%, #5a6d58 100%)",
       technologies: ["React", "D3.js", "Node.js"],
       link: "_blank"

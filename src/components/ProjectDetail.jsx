@@ -20,8 +20,8 @@ const ProjectDetail = ({
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false)
   const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/ChefBoStudies', icon: '🔗' },
-    { name: 'LinkedIn', url: 'https://linkedin.com/in/fariz-aliff', icon: '💼' },
-    { name: 'Email', url: 'mailto:fariz@example.com', icon: '📧' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/fariz-hasnan-10281b214/', icon: '💼' },
+    { name: 'Email', url: 'mailto:farizhasnan@gmail.com', icon: '📧' },
     { name: 'Portfolio', url: '/', icon: '🌐' }
   ]
 
